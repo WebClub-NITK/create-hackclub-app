@@ -1,0 +1,12 @@
+{
+  "name": "hackclub-nitk",
+  "version": "1.0.1",
+  "description": "HackClub NITK Starter Kit CLI",
+  "bin": {
+    "hackclub-nitk": "./bin/cli-tool"
+  },
+  "scripts": {
+    "postinstall": "chmod +x bin/cli-tool"
+  },
+  "dependencies": {}
+}

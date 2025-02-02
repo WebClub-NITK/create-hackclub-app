@@ -98,11 +98,11 @@ func cloneRepo(template string) {
 	var repoURL string
 	switch template {
 	case "web2":
-		repoURL = "https://github.com/Shivam-kum-mhta/NFTMinter.git"
+		repoURL = "https://github.com/WebClub-NITK/hackclub-template-web2.git"
 	case "web3":
-		repoURL = "https://github.com/Shivam-kum-mhta/NFTMinter.git"
+		repoURL = "https://github.com/Shivam-kum-mhta/hackclub-template-web3.git"
 	case "ai":
-		repoURL = "https://github.com/Shivam-kum-mhta/NFTMinter.git"
+		repoURL = "https://github.com/WebClub-NITK/hackclub-template-ai.git"
 	default:
 		fmt.Println("Invalid template selected!")
 		return
