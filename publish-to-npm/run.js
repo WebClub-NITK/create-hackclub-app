@@ -16,9 +16,9 @@ const banner = `
 // Determine platform
 let binaryName;
 if (process.platform === 'win32') {
-  binaryName = 'cli-tool-win.exe';
+  binaryName = 'cli-tool.exe';
 } else if (process.platform === 'darwin') {
-  binaryName = 'cli-tool-mac.txt';
+  binaryName = 'cli-tool-macos';
 } else if (process.platform === 'linux') {
   binaryName = 'cli-tool-linux';
 } else {
