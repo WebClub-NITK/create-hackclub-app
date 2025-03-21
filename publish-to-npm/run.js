@@ -4,6 +4,15 @@ const { execFileSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
+const banner = `
+███████╗████████╗ █████╗ ██████╗ ████████╗    ██╗  ██╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
+██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝    ██║  ██║██╔══██╗██╔════╝██║ ██║ ██║████╗  ██║██╔════╝ 
+███████╗   ██║   ███████║██████╔╝   ██║       ███████║███████║██║     ████    ██║██╔██╗ ██║██║  ███╗
+╚════██║   ██║   ██╔══██║██╔══██║   ██║       ██╔══██║██╔══██║██║     ██╔═██║ ██║██║╚██╗██║██║   ██║
+███████║   ██║   ██║  ██║██║   ██║  ██║       ██║  ██║██║  ██║╚██████╗██║  ██║██║██║ ╚████║╚██████╔╝
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝   ╚═╝  ╚═╝       ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+`;
+
 // Determine platform
 let binaryName;
 if (process.platform === 'win32') {
@@ -25,9 +34,15 @@ if (process.platform !== 'win32') {
 }
 
 try {
+  console.log("\x1b[1m\x1b[36m=== HackClub NITK Starterkit ===\x1b[0m");
+
   // Execute the binary with all arguments passed through
   execFileSync(binaryPath, process.argv.slice(2), { stdio: 'inherit' });
+
+  // Show banner after executing the binary
+  console.log("\n", banner, "\n");
+
 } catch (error) {
-  // Forward the exit code
-  process.exit(error.status);
+  console.error("Error executing binary:", error.message);
+  process.exit(error.status || 1);
 }

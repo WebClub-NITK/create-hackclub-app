@@ -1,4 +1,4 @@
-/*
+/* 
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 */
 package cmd
@@ -100,7 +100,7 @@ func cloneRepo(template string) {
 	case "web2":
 		repoURL = "https://github.com/WebClub-NITK/hackclub-template-web2.git"
 	case "web3":
-		repoURL = "https://github.com/Shivam-kum-mhta/hackclub-template-web3.git"
+		repoURL = "https://github.com/WebClub-NITK/hackclub-template-web3.git"
 	case "ai":
 		repoURL = "https://github.com/WebClub-NITK/hackclub-template-ai.git"
 	default:
@@ -112,9 +112,12 @@ func cloneRepo(template string) {
 	cmd := exec.Command("git", "clone", repoURL, name) // Clone into the project directory
 	err := cmd.Run()
 	if err != nil {
-		fmt.Println("Error cloning repository:", err)
+		fmt.Println("Error cloning repository OR it already exits:", err)
 	} else {
 		fmt.Println("Repository cloned successfully!")
+		if template == "web3" {
+			printWeb3Readme()
+		}
 	}
 }
 
@@ -123,4 +126,14 @@ func initGitRepo(projectName string) error {
 	cmd := exec.Command("git", "init")
 	cmd.Dir = projectName // Set the working directory to the project folder
 	return cmd.Run()
+}
+
+// Print Web3 setup instruction
+func printWeb3Readme() {
+	fmt.Println("___________________________________________________________________________________________________________________________________________________")
+	fmt.Println("\n## Setup Instructions")
+	fmt.Println("1. Navigate to the `Client` directory and Create an `.env` file (refer to `.env.example` file for reference).")
+	fmt.Println("2. Obtain a WalletConnect Project ID from https://cloud.walletconnect.com and add it to the `.env` file.")
+	fmt.Println("3. Start the Client by running 'npm i' and then 'npm run dev' ")
+	fmt.Println("___________________________________________________________________________________________________________________________________________________")
 }

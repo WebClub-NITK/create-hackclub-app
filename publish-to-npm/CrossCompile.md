@@ -1,8 +1,6 @@
-Following commands to cross-compile your Go CLI tool:
+Following commands to cross-compile the Go CLI tool (Execute this in the root directory and paste the built files in publish-to-npm/bin folder):
 
-bash
-Copy
-Edit
+
 # For Linux
 GOOS=linux GOARCH=amd64 go build -o cli-tool-linux main.go
 

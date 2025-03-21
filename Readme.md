@@ -1,4 +1,5 @@
-I am hoping u have installed go on your system , ensure by running 'go version'
+Ensure that u have installed golang on your system .
+Quickcheck:  run 'go version'
 
 # CLI Tool  
 ## Features  
@@ -7,7 +8,7 @@ I am hoping u have installed go on your system , ensure by running 'go version'
 - Uses `promptui` for a user-friendly selection experience.  
 
 
-## Installation  
+## Installation ( Optional )
 1. Install Cobra CLI:  
    ```bash  
    go install github.com/spf13/cobra-cli@latest  
